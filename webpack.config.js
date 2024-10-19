@@ -31,6 +31,6 @@ module.exports = (env, argv) => {
       historyApiFallback: true,
       open: true, // Auto-open the browser
     },
-    mode: argv.mode || 'development', // Set mode, fallback to 'development' if not set
+    mode: 'production'
   };
 };
