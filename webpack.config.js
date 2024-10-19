@@ -1,29 +1,36 @@
 const path = require('path');
 
-module.exports = {
-  entry: './src/index.ts',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  resolve: {
-    extensions: ['.ts', '.js'],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        use: 'babel-loader',
-        exclude: /node_modules/,
+module.exports = (env, argv) => {
+  return {
+    entry: './src/index.ts',
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'bundle.js',
+      publicPath: '/'
+    },
+    resolve: {
+      extensions: ['.ts', '.js'],
+    },
+    module: {
+      rules: [
+        {
+          test: /\.ts$/,
+          use: 'babel-loader',
+          exclude: /node_modules/,
+        },
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader'], // CSS loader added
+        },
+      ],
+    },
+    devServer: {
+      static: {
+        directory: path.join(__dirname, 'dist'),
       },
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'], // Added CSS loaders
-      },
-    ],
-  },
-  devServer: {
-    contentBase: './dist',
-    historyApiFallback: true
-  },
+      historyApiFallback: true,
+      open: true, // Auto-open the browser
+    },
+    mode: argv.mode || 'development', // Set mode, fallback to 'development' if not set
+  };
 };
