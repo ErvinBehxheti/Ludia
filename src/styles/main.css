@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #f3f4f6;
+  font-family: monospace;
 }
 
 @layer utilities {
@@ -20,7 +20,7 @@ body {
   }
 
   .nav-li_a {
-    @apply text-lg md:text-base text-softWhite hover:text-white transition-colors;
+    @apply text-lg md:text-base text-softWhite hover:text-[#2bbc8a] transition-colors;
   }
 
   .nav-sidebar {

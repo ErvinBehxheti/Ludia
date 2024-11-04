@@ -2,10 +2,10 @@ export default function HomeView() {
   const app = document.getElementById("app") as HTMLDivElement;
 
   app.innerHTML = `
-    <header class="fixed top-0 left-0 right-0 z-10 bg-deepBlue backdrop-blur-md">
-      <nav class="max-w-7xl mx-auto">
+    <header class="fixed h-20 w-full">
+      <nav class="max-w-7xl mx-auto border-b-2">
         <div class="flex justify-between items-center py-5 mx-auto c-space">
-          <a href="/" class="text-softWhite font-bold text-xl hover:text-white transition-colors">Physics</a>
+          <a href="/" class="text-[#2bbc8a] font-bold text-xl hover:text-white transition-colors">Physics</a>
           <button id="menu-toggle" class="text-softWhite hover:text-white focus:outline-none sm:hidden flex" aria-label="Toggle menu">
             <img id="menu-icon" src="assets/menu.svg" alt="toggle" class="w-6 h-6" />
           </button>
@@ -21,7 +21,7 @@ export default function HomeView() {
       </div>
     </header>
 
-    <section class="flex min-h-screen w-full">
+    <section class="flex min-h-screen w-full bg-[#1d1f21]">
     <div>
     </div>
     <div>
