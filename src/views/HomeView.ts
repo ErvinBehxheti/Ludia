@@ -1,8 +1,6 @@
-// HomeView.ts
 export default function HomeView() {
   const app = document.getElementById("app") as HTMLDivElement;
 
-  // Render HTML first
   app.innerHTML = `
     <header class="fixed top-0 left-0 right-0 z-10 bg-deepBlue backdrop-blur-md">
       <nav class="max-w-7xl mx-auto">
@@ -31,17 +29,19 @@ export default function HomeView() {
     </section>
   `;
 
-  // Now call a function to bind event listeners
   setupNavbar();
 }
 
-// Separate function to handle navbar logic
 function setupNavbar() {
   const menuIcon = document.getElementById("menu-icon") as HTMLImageElement;
   const sidebar = document.getElementById("sidebar") as HTMLDivElement;
-  const menuToggle = document.getElementById("menu-toggle") as HTMLButtonElement;
+  const menuToggle = document.getElementById(
+    "menu-toggle"
+  ) as HTMLButtonElement;
   const navItems = document.getElementById("nav-items") as HTMLUListElement;
-  const navItemsMobile = document.getElementById("nav-items-mobile") as HTMLUListElement;
+  const navItemsMobile = document.getElementById(
+    "nav-items-mobile"
+  ) as HTMLUListElement;
 
   const navLinks = [
     { id: 1, name: "Home", href: "#home" },
@@ -49,7 +49,6 @@ function setupNavbar() {
     { id: 3, name: "Topics", href: "#topics" },
   ];
 
-  // Toggle menu state
   let isOpen = false;
   const toggleMenu = () => {
     isOpen = !isOpen;
@@ -65,7 +64,6 @@ function setupNavbar() {
     menuIcon.src = "assets/menu.svg";
   };
 
-  // Populate navigation items
   const populateNavItems = (navContainer: HTMLElement) => {
     navLinks.forEach((item) => {
       const li = document.createElement("li");
@@ -85,6 +83,5 @@ function setupNavbar() {
   populateNavItems(navItems);
   populateNavItems(navItemsMobile);
 
-  // Bind the toggle event listener
   menuToggle.addEventListener("click", toggleMenu);
 }

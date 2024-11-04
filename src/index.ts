@@ -1,4 +1,3 @@
-// index.ts
 import router from "./router";
 import HomeView from "./views/HomeView";
 import "./styles/main.css";
