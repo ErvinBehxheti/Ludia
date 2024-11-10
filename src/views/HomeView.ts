@@ -2,30 +2,58 @@ export default function HomeView() {
   const app = document.getElementById("app") as HTMLDivElement;
 
   app.innerHTML = `
-    <header class="fixed h-20 w-full">
-      <nav class="max-w-7xl mx-auto border-b-2">
-        <div class="flex justify-between items-center py-5 mx-auto c-space">
-          <a href="/" class="text-[#2bbc8a] font-bold text-xl hover:text-white transition-colors">Physics</a>
+    <header class="fixed h-20 w-full z-10">
+      <nav class="max-w-7xl mx-auto">
+        <div class="flex justify-between items-center py-5 mx-auto">
+          <a href="#home" class="text-[#2bbc8a] font-bold text-xl hover:text-white transition-colors">Physics</a>
           <button id="menu-toggle" class="text-softWhite hover:text-white focus:outline-none sm:hidden flex" aria-label="Toggle menu">
             <img id="menu-icon" src="assets/menu.svg" alt="toggle" class="w-6 h-6" />
           </button>
           <nav class="sm:flex hidden">
-            <ul id="nav-items" class="nav-ul"></ul>
+            <ul class="flex space-x-6 text-white">
+              <li><a href="#home" class="nav-link">Home</a></li>
+              <li><a href="#about" class="nav-link">About</a></li>
+              <li><a href="#topics" class="nav-link">Topics</a></li>
+            </ul>
           </nav>
         </div>
       </nav>
-      <div id="sidebar" class="nav-sidebar max-h-0">
-        <nav>
-          <ul class="nav-ul p-5" id="nav-items-mobile"></ul>
-        </nav>
-      </div>
     </header>
 
-    <section class="flex min-h-screen w-full bg-[#1d1f21]">
-    <div>
-    </div>
-    <div>
-    </div>
+    <section id="home" class="flex min-h-screen justify-center items-center w-full p-10">
+      <div class="text-center text-white">
+        <h1 class="text-4xl font-bold">Welcome to Physics World</h1>
+        <p class="text-xl mt-4">Your gateway to understanding the universe.</p>
+      </div>
+    </section>
+
+    <section id="about" class="flex min-h-screen justify-center items-center w-full p-10">
+      <div class="text-center text-white max-w-md">
+        <h2 class="text-3xl font-bold">About Us</h2>
+        <p class="text-lg mt-4">
+          Formula Visualizer is dedicated to making physics accessible through interactive animations and visuals. Explore concepts intuitively and deepen your understanding.
+        </p>
+      </div>
+    </section>
+
+    <section id="topics" class="flex min-h-screen justify-center items-center w-full p-10">
+      <div class="text-center text-white max-w-lg">
+        <h2 class="text-3xl font-bold">Topics</h2>
+        <p class="text-lg mt-4">
+          Dive into various topics, from Newtonian mechanics to electromagnetism, and experience formulas come to life with our interactive visualizations.
+        </p>
+        <div class="flex flex-wrap justify-center mt-6">
+          <!-- Add visual topic cards here if desired -->
+          <div class="topic-card m-4 p-4 bg-gray-800 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold text-[#2bbc8a]">Newton's Laws</h3>
+            <p class="mt-2">Discover the fundamental principles of motion.</p>
+          </div>
+          <div class="topic-card m-4 p-4 bg-gray-800 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold text-[#2bbc8a]">Electromagnetism</h3>
+            <p class="mt-2">Explore the interactions between electric and magnetic fields.</p>
+          </div>
+        </div>
+      </div>
     </section>
   `;
 
@@ -33,55 +61,26 @@ export default function HomeView() {
 }
 
 function setupNavbar() {
-  const menuIcon = document.getElementById("menu-icon") as HTMLImageElement;
-  const sidebar = document.getElementById("sidebar") as HTMLDivElement;
   const menuToggle = document.getElementById(
     "menu-toggle"
   ) as HTMLButtonElement;
-  const navItems = document.getElementById("nav-items") as HTMLUListElement;
-  const navItemsMobile = document.getElementById(
-    "nav-items-mobile"
-  ) as HTMLUListElement;
-
-  const navLinks = [
-    { id: 1, name: "Home", href: "#home" },
-    { id: 2, name: "About", href: "#about" },
-    { id: 3, name: "Topics", href: "#topics" },
-  ];
+  const menuIcon = document.getElementById("menu-icon") as HTMLImageElement;
+  const sidebar = document.getElementById("sidebar") as HTMLDivElement;
 
   let isOpen = false;
-  const toggleMenu = () => {
+  menuToggle?.addEventListener("click", () => {
     isOpen = !isOpen;
     sidebar.classList.toggle("max-h-screen", isOpen);
     sidebar.classList.toggle("max-h-0", !isOpen);
     menuIcon.src = isOpen ? "assets/close.svg" : "assets/menu.svg";
-  };
+  });
 
-  const closeMenu = () => {
-    isOpen = false;
-    sidebar.classList.remove("max-h-screen");
-    sidebar.classList.add("max-h-0");
-    menuIcon.src = "assets/menu.svg";
-  };
-
-  const populateNavItems = (navContainer: HTMLElement) => {
-    navLinks.forEach((item) => {
-      const li = document.createElement("li");
-      li.classList.add("nav-li");
-
-      const a = document.createElement("a");
-      a.href = item.href;
-      a.classList.add("nav-li_a");
-      a.textContent = item.name;
-      a.onclick = closeMenu;
-
-      li.appendChild(a);
-      navContainer.appendChild(li);
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link?.getAttribute("href")?.slice(1);
+      const targetSection = document.getElementById(targetId as string);
+      targetSection?.scrollIntoView({ behavior: "smooth" });
     });
-  };
-
-  populateNavItems(navItems);
-  populateNavItems(navItemsMobile);
-
-  menuToggle.addEventListener("click", toggleMenu);
+  });
 }
