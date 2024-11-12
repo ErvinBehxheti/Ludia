@@ -2,11 +2,97 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: monospace;
   background-color: #1d1f21;
 }
 
+header {
+  backdrop-filter: blur(10px);
+}
+
+#particles-js {
+  z-index: 0;
+}
+
+.glass-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+section {
+  z-index: 5;
+  position: relative;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.svg-container {
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+}
+
+use[id*="orbit-"] {
+  stroke-width: 2;
+  opacity: 0.8;
+}
+
+use[id*="electron-"] {
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 0.1 400;
+  animation: electron-orbit 6s linear infinite;
+}
+
+#electron-1 {
+  animation-delay: 0s;
+}
+#electron-2 {
+  animation-delay: 0.5s;
+}
+#electron-3 {
+  animation-delay: 1s;
+}
+
+@keyframes electron-orbit {
+  0% {
+    stroke-dashoffset: 400;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
 @layer utilities {
   .c-space {
     @apply sm:px-10 px-5;
@@ -25,6 +111,6 @@ body {
   }
 
   .nav-sidebar {
-    @apply absolute left-0 right-0 bg-[#0457ac] backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block;
+    @apply absolute left-0 right-0 text-white text-xl transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block;
   }
 }
