@@ -1,8 +1,13 @@
 import router from "./router";
 import HomeView from "./views/HomeView";
 import "./styles/main.css";
+import LearnView from "./views/LearnView";
+import VectorsView from "./views/VectorsView";
 
 router.addRoute("/", HomeView);
+router.addRoute("/learn", LearnView);
+router.addRoute("/learn/vectors", LearnView, VectorsView);
+
 router.addRoute("/404", () => {
   const app = document.getElementById("app") as HTMLDivElement;
   app.innerHTML = "<h1>404 - Not Found</h1>";

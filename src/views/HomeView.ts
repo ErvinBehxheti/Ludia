@@ -45,6 +45,14 @@ export default function HomeView() {
                   >Topics</a
                 >
               </li>
+              <li class="nav-li">
+                <a
+                  href="/learn"
+                  class="nav-li_a hover:text-[#2bbc8a] transition-colors"
+                  data-link
+                  >Learn</a
+                >
+              </li>
             </ul>
           </nav>
         </div>
@@ -72,6 +80,14 @@ export default function HomeView() {
                 class="nav-li_a hover:text-[#2bbc8a] transition-colors"
                 >Topics</a
               >
+            </li>
+            <li class="nav-li">
+                <a
+                  href="/learn"
+                  class="nav-li_a hover:text-[#2bbc8a] transition-colors"
+                  data-link
+                  >Learn</a
+                >
             </li>
           </ul>
         </nav>
@@ -147,12 +163,27 @@ export default function HomeView() {
       id="about"
       class="flex min-h-screen justify-center items-center w-full p-10"
     >
-      <div class="text-center text-white max-w-md">
-        <h2 class="text-3xl font-bold">About Us</h2>
+      <div class="w-1/2">
+        <iframe
+          width="800"
+          height="500"
+          class="object-cover rounded-2xl border"
+          src="https://www.youtube.com/embed/ErMSHiQRnc8"
+          title="Animation vs. Physics"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="text-center text-white w-1/2">
+        <h2 class="text-3xl font-bold">About Formula Visualizer</h2>
         <p class="text-lg mt-4">
-          Formula Visualizer is dedicated to making physics accessible through
-          interactive animations and visuals. Explore concepts intuitively and
-          deepen your understanding.
+          I’ve always wanted to create something exciting using vanilla
+          JavaScript—a <abbr title="Single Page Application">SPA</abbr> built
+          from scratch without relying on libraries or frameworks. One day, I
+          stumbled upon an amazing animated physics video that inspired me to
+          build this website, making learning basic physics fun and interactive.
         </p>
       </div>
     </section>
@@ -164,22 +195,17 @@ export default function HomeView() {
       <div class="text-center text-white max-w-lg">
         <h2 class="text-3xl font-bold">Topics</h2>
         <p class="text-lg mt-4">
-          Dive into various topics, from Newtonian mechanics to
-          electromagnetism, and experience formulas come to life with our
-          interactive visualizations.
+          How can you learn effectively? For every topic, I provide a thorough
+          explanation, ensuring only minimal prior knowledge is needed. I break
+          down each concept step by step and include a captivating animation at
+          the end to aid visualization. To start learning, click "Learn" in the
+          navbar or <a href="/learn" data-link>Click Here</a>!
         </p>
+
         <div class="flex flex-wrap justify-center mt-6">
           <div class="topic-card m-4 p-4 bg-gray-800 rounded-lg shadow-lg">
-            <h3 class="text-xl font-semibold text-[#2bbc8a]">Newton's Laws</h3>
-            <p class="mt-2">Discover the fundamental principles of motion.</p>
-          </div>
-          <div class="topic-card m-4 p-4 bg-gray-800 rounded-lg shadow-lg">
-            <h3 class="text-xl font-semibold text-[#2bbc8a]">
-              Electromagnetism
-            </h3>
-            <p class="mt-2">
-              Explore the interactions between electric and magnetic fields.
-            </p>
+            <h3 class="text-xl font-semibold text-[#2bbc8a]">Vectors</h3>
+            <p class="mt-2">Navigate in the space of Vectors</p>
           </div>
         </div>
       </div>

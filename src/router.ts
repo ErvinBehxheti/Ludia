@@ -1,12 +1,12 @@
 class Router {
-  private routes: { [path: string]: Function } = {};
+  private routes: { [path: string]: Function[] } = {};
 
   constructor() {
     window.addEventListener("popstate", () => this.loadRoute());
   }
 
-  addRoute(path: string, view: Function) {
-    this.routes[path] = view;
+  addRoute(path: string, ...views: Function[]) {
+    this.routes[path] = views;
   }
 
   navigate(path: string) {
@@ -17,10 +17,16 @@ class Router {
   loadRoute() {
     const path = window.location.pathname;
     const route = this.routes[path];
-    if (route) {
-      route();
-    } else {
-      this.routes["/404"]();
+    const app = document.getElementById("app");
+
+    if (app) {
+      app.innerHTML = "";
+
+      if (route) {
+        route.forEach((view) => view());
+      } else {
+        this.routes["/404"]?.forEach((view) => view());
+      }
     }
   }
 }
