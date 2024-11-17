@@ -128,3 +128,11 @@ use[id*="electron-"] {
     animation: spin-slow 15s linear infinite;
   }
 }
+
+.subsection {
+  display: none;
+}
+
+.subsection:not(.dontShow) {
+  display: block;
+}
