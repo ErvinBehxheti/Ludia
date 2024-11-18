@@ -2,9 +2,9 @@ export default function VectorsView() {
   const learningView = document.getElementById("learning-view") as HTMLElement;
 
   learningView.innerHTML = `
-     <div class="text-white">
+         <div class="text-white">
       <h1 class="text-2xl font-bold pb-3">Vectors</h1>
-      <div>
+      <section id="vector-introduction">
         <h2 class="text-xl font-semibold">What are Vectors?</h2>
         <p>
           A vector is an object that has both a magnitude and a direction.
@@ -42,10 +42,10 @@ export default function VectorsView() {
           a <abbr title="A scalar is a real number">scalar</abbr>. We will
           denote scalars with italics, as in <em>a</em> or <em>b</em> .
         </p>
-      </div>
+      </section>
     </div>
 
-    <div class="pt-14 text-white">
+    <section id="vector-addition" class="pt-14 text-white">
       <h2 class="text-xl font-semibold">Operations on Vectors</h2>
 
       <p>
@@ -119,7 +119,46 @@ export default function VectorsView() {
           (\\(\\vec{b}\\) + \\(\\vec{c}\\))
         </p>
       </div>
-    </div>
+    </section>
+
+    <section id="vector-subtraction" class="text-white pt-14">
+      <h2 class="text-xl font-semibold">Subtracting Vectors</h2>
+      <p>
+        Before we define subtraction, we define the vector -\\(\\vec{a}\\) ,
+        which is the opposite of \\(\\vec{a}\\) . The vector −\\(\\vec{a}\\) is
+        the vector with the same magnitude as \\(\\vec{a}\\) but that is pointed
+        in the opposite direction
+      </p>
+      <img
+        src="https://mathinsight.org/media/image/image/vector_opposite.png"
+        alt="inverse-vector"
+        width="565"
+        height="219"
+        class="place-self-center py-10"
+      />
+      <br />
+      <p>We define subtraction as addition with the opposite of a vector:</p>
+      <br />
+      <p class="text-center">
+        \\(\\vec{b}\\) − \\(\\vec{a}\\) = \\(\\vec{b}\\) + (−\\(\\vec{a}\\)).
+      </p>
+      <br />
+      <p>
+        This is equivalent to turning vector \\(\\vec{a}\\) around in the
+        applying the above rules for addition. Can you see how the vector
+        \\(\\vec{x}\\) in the below figure is equal to \\(\\vec{b}\\) −
+        \\(\\vec{a}\\) ? Notice how this is the same as stating that
+        \\(\\vec{a}\\) + \\(\\vec{x}\\) = \\(\\vec{b}\\) , just like with
+        subtraction of scalar numbers.
+      </p>
+      <img
+        src="https://mathinsight.org/media/image/image/vector_b_minus_a.png"
+        alt="Vector-subtraction"
+        class="place-self-center py-10"
+        width="543"
+        height="134"
+      />
+    </section>
   `;
   // @ts-ignore
   MathJax.typeset();
