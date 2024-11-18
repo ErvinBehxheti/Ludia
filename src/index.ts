@@ -4,6 +4,9 @@ import "./styles/main.css";
 import LearnView from "./views/LearnView";
 import VectorsView from "./views/VectorsView";
 
+// Global scope declaration for math stuff;
+declare const MathJax: any;
+
 router.addRoute("/", HomeView);
 router.addRoute("/learn", LearnView);
 router.addRoute("/learn/vectors", LearnView, VectorsView);

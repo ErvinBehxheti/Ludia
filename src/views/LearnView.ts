@@ -5,8 +5,8 @@ export default function LearnView() {
   app.innerHTML = `
     <div class="flex relative z-10">
       <aside class="min-h-screen w-[20%] bg-white p-4">
+        <nav class="fixed">
         <h1 class="text-xl font-bold mb-4">Physics</h1>
-        <nav>
           <ul class="space-y-2">
             <li>
               <a href="/learn/vectors" data-link class="sidebar-link section" data-section="vectors">Vectors</a>

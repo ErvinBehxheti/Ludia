@@ -134,5 +134,12 @@ use[id*="electron-"] {
 }
 
 .subsection:not(.dontShow) {
+  transform: translateY(0);
   display: block;
+}
+
+strong,
+em,
+abbr {
+  color: #2bbc8a;
 }
