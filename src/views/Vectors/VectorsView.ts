@@ -2,9 +2,9 @@ export default function VectorsView() {
   const learningView = document.getElementById("learning-view") as HTMLElement;
 
   learningView.innerHTML = `
-         <div class="text-white">
+  <article class="text-white">
+        <section id="vector-introduction">
       <h1 class="text-2xl font-bold pb-3">Vectors</h1>
-      <section id="vector-introduction">
         <h2 class="text-xl font-semibold">What are Vectors?</h2>
         <p>
           A vector is an object that has both a magnitude and a direction.
@@ -43,9 +43,8 @@ export default function VectorsView() {
           denote scalars with italics, as in <em>a</em> or <em>b</em> .
         </p>
       </section>
-    </div>
 
-    <section id="vector-addition" class="pt-14 text-white">
+    <section id="vector-addition" class="pt-14">
       <h2 class="text-xl font-semibold">Operations on Vectors</h2>
 
       <p>
@@ -54,7 +53,7 @@ export default function VectorsView() {
         <strong>addition</strong>, <strong>subtraction</strong>, and
         <strong>multiplication</strong> by a scalar. On separate pages, we
         discuss two different ways to multiply two vectors together:
-        <strong>the dot product</strong> and <strong>the cross product</strong>.
+        <u><a href="/learn/vectors/dot-product" data-link class="text-[#2bbc8a] font-semibold">the dot product</a></u> and <u><a href="/learn/vectors/cross-product" data-link class="text-[#2bbc8a] font-semibold">the cross product</a></u>.
       </p>
       <br />
       <h3 class="text-lg font-semibold">Addition of Vectors</h3>
@@ -121,7 +120,7 @@ export default function VectorsView() {
       </div>
     </section>
 
-    <section id="vector-subtraction" class="text-white pt-14">
+    <section id="vector-subtraction" class="pt-14">
       <h2 class="text-xl font-semibold">Subtracting Vectors</h2>
       <p>
         Before we define subtraction, we define the vector -\\(\\vec{a}\\) ,
@@ -160,7 +159,7 @@ export default function VectorsView() {
       />
     </section>
 
-    <section id="vector-multiplication" class="text-white pt-14">
+    <section id="vector-multiplication" class="pt-14">
       <h2 class="text-xl font-semibold">Scalar Multiplications</h2>
       <br />
       <p>
@@ -234,6 +233,7 @@ export default function VectorsView() {
         in the plane and in three-dimensional space.
       </p>
     </section>
+  </article>
   `;
   // @ts-ignore
   MathJax.typeset();

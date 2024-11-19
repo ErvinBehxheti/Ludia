@@ -12,9 +12,6 @@ export default function LearnView() {
               <a href="/learn/vectors" data-link class="sidebar-link section" data-section="vectors">Vectors</a>
             </li>
             <li class="subsection dontShow" data-parent="vectors">
-              <a href="/learn/vectors/multi-dimensional" data-link>2&3 Dimensional</a>
-            </li>
-            <li class="subsection dontShow" data-parent="vectors">
               <a href="/learn/vectors/dot-product" data-link>Dot Product</a>
             </li>
             <li class="subsection dontShow" data-parent="vectors">

@@ -2,7 +2,8 @@ import router from "./router";
 import HomeView from "./views/HomeView";
 import "./styles/main.css";
 import LearnView from "./views/LearnView";
-import VectorsView from "./views/VectorsView";
+import VectorsView from "./views/Vectors/VectorsView";
+import DotVector from "./views/Vectors/DotVector";
 
 // Global scope declaration for math stuff;
 declare const MathJax: any;
@@ -10,6 +11,7 @@ declare const MathJax: any;
 router.addRoute("/", HomeView);
 router.addRoute("/learn", LearnView);
 router.addRoute("/learn/vectors", LearnView, VectorsView);
+router.addRoute("/learn/vectors/dot-product", LearnView, DotVector);
 
 router.addRoute("/404", () => {
   const app = document.getElementById("app") as HTMLDivElement;
