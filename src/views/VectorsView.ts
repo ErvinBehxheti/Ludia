@@ -159,6 +159,81 @@ export default function VectorsView() {
         height="134"
       />
     </section>
+
+    <section id="vector-multiplication" class="text-white pt-14">
+      <h2 class="text-xl font-semibold">Scalar Multiplications</h2>
+      <br />
+      <p>
+        Given a vector \\(\\vec{a}\\) and a real number (scalar) λ , we can form
+        the vector λ\\(\\vec{a}\\) as follows. If λ is positive, then
+        λ\\(\\vec{a}\\) is the vector whose direction is the same as the
+        direction of \\(\\vec{a}\\) and whose length is λ times the length of
+        \\(\\vec{a}\\) . In this case, multiplication by λ simply stretches (if
+        λ>1 ) or compresses (if 0 &lt; λ &lt; 1) the vector \\(\\vec{a}\\) .
+      </p>
+      <br />
+      <p>
+        If, on the other hand, λ is negative, then we have to take the opposite
+        of \\(\\vec{a}\\) before stretching or compressing it. In other words,
+        the vector λ\\(\\vec{a}\\) points in the opposite direction of
+        \\(\\vec{a}\\) , and the length of λ\\(\\vec{a}\\) is |λ| times the
+        length of a . No matter the sign of λ , we observe that the magnitude of
+        λ\\(\\vec{a}\\) is |λ| times the magnitude of \\(\\vec{a}\\) :
+        ∥λ\\(\\vec{a}\\)∥=|λ|∥\\(\\vec{a}\\)∥ .
+      </p>
+      <br />
+      <p>
+        Scalar multiplications satisfies many of the same properties as the
+        usual multiplication.
+      </p>
+      <br />
+      <div class="pl-10">
+        <li>
+          1.
+          <em>s</em
+          >(\\(\\vec{a}\\)+\\(\\vec{b}\\))=<em>s</em>\\(\\vec{a}\\)+<em>s</em>\\(\\vec{b}\\)
+          (distributive law, form 1)
+        </li>
+        <li>
+          2.
+          (<em>s</em>+<em>t</em>)\\(\\vec{a}\\)=<em>s</em>\\(\\vec{a}\\)+<em>t</em>\\(\\vec{a}\\)
+          (distributive law, form 2)
+        </li>
+        <li>3. 1\\(\\vec{a}\\)=\\(\\vec{a}\\)</li>
+        <li>4. (−1)\\(\\vec{a}\\)=−\\(\\vec{a}\\)</li>
+        <li>5. 0\\(\\vec{a}\\)=0</li>
+      </div>
+      <br />
+      <p>
+        In the last formula, the zero on the left is the number 0, while the
+        zero on the right is the vector 0 , which is the unique vector whose
+        length is zero.
+      </p>
+      <br />
+      <p>
+        If a=λb for some scalar λ , then we say that the vectors \\(\\vec{a}\\)
+        and \\(\\vec{b}\\) are parallel. If λ is negative, some people say that
+        \\(\\vec{a}\\) and \\(\\vec{b}\\) are anti-parallel, but we will not use
+        that language.
+      </p>
+      <br />
+      <br />
+      <p>
+        We were able to describe <strong>vectors</strong>,
+        <strong>vector addition</strong>, <strong>vector subtraction</strong>,
+        and <strong>scalar multiplication</strong> without reference to any
+        coordinate system. The advantage of such purely geometric reasoning is
+        that our results hold generally, independent of any coordinate system in
+        which the vectors live. However, sometimes it is useful to express
+        vectors in terms of coordinates, as discussed in a page about
+        <a
+          href="https://mathinsight.org/vectors_cartesian_coordinates_2d_3d"
+          class="text-green-400"
+          >vectors in the standard Cartesian coordinate systems</a
+        >
+        in the plane and in three-dimensional space.
+      </p>
+    </section>
   `;
   // @ts-ignore
   MathJax.typeset();
