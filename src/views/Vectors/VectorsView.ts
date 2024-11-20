@@ -2,10 +2,9 @@ export default function VectorsView() {
   const learningView = document.getElementById("learning-view") as HTMLElement;
 
   learningView.innerHTML = `
-  <article class="text-white">
+  <article class="text-white text-lg">
         <section id="vector-introduction">
-      <h1 class="text-2xl font-bold pb-3">Vectors</h1>
-        <h2 class="text-xl font-semibold">What are Vectors?</h2>
+        <h2 class="text-2xl pb-4 font-semibold">What are Vectors?</h2>
         <p>
           A vector is an object that has both a magnitude and a direction.
           Geometrically, we can picture a vector as a directed line segment,
@@ -45,7 +44,7 @@ export default function VectorsView() {
       </section>
 
     <section id="vector-addition" class="pt-14">
-      <h2 class="text-xl font-semibold">Operations on Vectors</h2>
+      <h2 class="text-2xl pb-4 font-semibold">Operations on Vectors</h2>
 
       <p>
         We can define a number of operations on vectors geometrically without
@@ -56,7 +55,7 @@ export default function VectorsView() {
         <u><a href="/learn/vectors/dot-product" data-link class="text-[#2bbc8a] font-semibold">the dot product</a></u> and <u><a href="/learn/vectors/cross-product" data-link class="text-[#2bbc8a] font-semibold">the cross product</a></u>.
       </p>
       <br />
-      <h3 class="text-lg font-semibold">Addition of Vectors</h3>
+      <h2 class="text-2xl pb-4 font-semibold">Addition of Vectors</h2>
       <p>
         Given two vectors \\(\\vec{a}\\) and \\(\\vec{b}\\) , we form their sum
         \\(\\vec{a}\\)+\\(\\vec{b}\\) , as follows. We translate the vector
@@ -121,7 +120,7 @@ export default function VectorsView() {
     </section>
 
     <section id="vector-subtraction" class="pt-14">
-      <h2 class="text-xl font-semibold">Subtracting Vectors</h2>
+      <h2 class="text-2xl pb-4 font-semibold">Subtracting Vectors</h2>
       <p>
         Before we define subtraction, we define the vector -\\(\\vec{a}\\) ,
         which is the opposite of \\(\\vec{a}\\) . The vector −\\(\\vec{a}\\) is
@@ -160,8 +159,7 @@ export default function VectorsView() {
     </section>
 
     <section id="vector-multiplication" class="pt-14">
-      <h2 class="text-xl font-semibold">Scalar Multiplications</h2>
-      <br />
+      <h2 class="text-2xl pb-4 font-semibold">Scalar Multiplications</h2>
       <p>
         Given a vector \\(\\vec{a}\\) and a real number (scalar) λ , we can form
         the vector λ\\(\\vec{a}\\) as follows. If λ is positive, then
@@ -233,6 +231,74 @@ export default function VectorsView() {
         in the plane and in three-dimensional space.
       </p>
     </section>
+    <section id="article-vector-application" class="pt-14">
+      <h2 class="text-2xl font-semibold">Application of Vectors in Computer Science and Physics</h2>
+      <br />
+      <div>
+        <h1 class="font-semibold text-xl">Computer Science</h1>
+        <div class="pl-4 pt-4">
+          <p class="font-medium">1. Graphics and Game Development:</p>
+          <div class="pl-8">
+            <li>Vectors are used to represent positions, directions, and movements in 2D/3D graphics.</li>
+            <li>They help simulate realistic motion, lighting, and transformations (scaling, rotation, translation).</li>
+          </div>
+        </div>
+        <div class="pl-4 pt-4">
+          <p class="font-medium">2. Machine Learning and AI:</p>
+          <div class="pl-8">
+            <li>Feature vectors represent data points in high-dimensional spaces.</li>
+            <li>Used in algorithms like k-means clustering, support vector machines, and neural networks.</li>
+          </div>
+        </div>
+        <div class="pl-4 pt-4">
+          <p class="font-medium">3. Robotics and Navigation:</p>
+          <div class="pl-8">
+            <li>Vectors represent paths, velocities, and forces for autonomous movement.</li>
+            <li>Help calculate the shortest path or trajectory.</li>
+          </div>
+        </div>
+        <div class="pl-4 pt-4">
+          <p class="font-medium">4. Physics Simulations:</p>
+          <div class="pl-8">
+            <li>Simulate natural phenomena (e.g., collisions, fluid dynamics) in computer programs</li>
+            <li>Vectors calculate forces, velocities, and accelerations in simulations.</li>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h1 class="font-semibold text-xl pt-4">Physics</h1>
+        <div class="pl-4 pt-4">
+          <p class="font-medium">1. Mechanics:</p>
+          <div class="pl-8">
+            <li>Vectors describe motion (displacement, velocity, acceleration) and forces (e.g., gravity, friction).</li>
+            <li>Essential for solving problems involving projectile motion and Newton's laws.</li>
+          </div>
+        </div>
+        <div class="pl-4 pt-4">
+          <p class="font-medium">2. Electromagnetism:</p>
+          <div class="pl-8">
+            <li>Electric and magnetic fields are vector fields.</li>
+            <li>Vectors describe forces on charges and the direction of current flow.</li>
+          </div>
+        </div>
+        <div class="pl-4 pt-4">
+          <p class="font-medium">3. Fluid Dynamics:</p>
+          <div class="pl-8">
+            <li>Velocity and acceleration of fluid particles are represented as vectors.</li>
+            <li>Helps model airflow, ocean currents, and weather patterns.</li>
+          </div>
+        </div>
+        <div class="pl-4 pt-4">
+          <p class="font-medium">4. Astronomy and Space Science:</p>
+          <div class="pl-8">
+            <li>Vectors calculate trajectories, orbital mechanics, and forces acting on celestial bodies.</li>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br />
+    <h1 class="font-semibold text-xl py-4">Why should I learn Vectors?</h1>
+    <p>Vectors are the backbone of many fields, including computer graphics, machine learning, physics, robotics, and engineering.They provide a systematic way to break down and analyze problems involving directions, magnitudes, and projections.Understanding vectors helps you design simulations, optimize machine learning models, and solve physics problems.</p>
   </article>
   `;
   // @ts-ignore
