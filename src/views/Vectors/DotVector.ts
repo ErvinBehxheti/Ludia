@@ -2,8 +2,8 @@ export default function DotVector() {
   const learningView = document.getElementById("learning-view") as HTMLElement;
 
   learningView.innerHTML = `
-    <article class="text-white">
-      <h1 class="text-2xl font-semibold">The Dot Product</h1>
+    <article class="text-white text-lg">
+      <h1 class="text-3xl font-semibold">The Dot Product</h1>
       <br />
       <p>
         The dot product between two vectors is based on the projection of one
@@ -122,6 +122,57 @@ export default function DotVector() {
         height="287"
         class="place-self-center py-10"
       />
+      <section id="article-vector-application" class="pt-14">
+      <h2 class="text-2xl font-semibold">Applications of Dot Product (Dot Vectors) in Computer Science and Physics</h2>
+      <br />
+      <div>
+        <h1 class="font-semibold text-xl">Computer Science</h1>
+        <div class="pl-4 pt-4">
+          <p class="font-medium">1. Graphics and Lighting:</p>
+          <div class="pl-8">
+            <li>Used in calculating the angle between light and surface normals for shading (Phong shading, Lambertian reflectance).</li>
+            <li>Determines how much light a surface reflects based on the cosine of the angle.</li>
+          </div>
+        </div>
+        <div class="pl-4 pt-4">
+          <p class="font-medium">2. Machine Learning and Recommendation Systems::</p>
+          <div class="pl-8">
+            <li>Measures similarity between vectors (e.g., cosine similarity in text/document analysis and user-item preferences).</li>
+          </div>
+        </div>
+        <div class="pl-4 pt-4">
+          <p class="font-medium">3. Physics Simulations:</p>
+          <div class="pl-8">
+            <li>Helps determine the component of a vector along a direction (e.g., projection of velocity onto a plane).</li>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h1 class="font-semibold text-xl pt-4">Physics</h1>
+        <div class="pl-4 pt-4">
+          <p class="font-medium">1. Work Done:</p>
+          <div class="pl-8">
+            <li>Dot product calculates work as 𝑊 = 𝐹 ⋅ 𝑑, where 𝐹 is force and 𝑑 is displacement.</li>
+            <li>Only the component of force in the direction of displacement contributes to work.</li>
+          </div>
+        </div>
+        <div class="pl-4 pt-4">
+          <p class="font-medium">2. Electric Flux:</p>
+          <div class="pl-8">
+            <li>Calculated using the dot product of the electric field vector and area vector.</li>
+          </div>
+        </div>
+        <div class="pl-4 pt-4">
+          <p class="font-medium">3. Projection of Forces:</p>
+          <div class="pl-8">
+            <li>Dot product projects forces or velocities onto specific directions for analysis.</li>
+          </div>
+        </div>
+      </div>
+      <br />
+      <h1 class="font-semibold text-xl py-4">Why should I learn the Dot Product?</h1>
+      <p>The dot product is a powerful tool that allows you to extract valuable information from vectors. By understanding how to calculate and interpret the dot product, you can determine the angle between two vectors, project one vector onto another, and calculate the work done by a force.</p>
+    </section>
     </article>
   `;
   // @ts-ignore

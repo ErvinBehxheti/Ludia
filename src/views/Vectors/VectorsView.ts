@@ -295,10 +295,10 @@ export default function VectorsView() {
           </div>
         </div>
       </div>
+      <br />
+      <h1 class="font-semibold text-xl py-4">Why should I learn Vectors?</h1>
+      <p>Vectors are the backbone of many fields, including computer graphics, machine learning, physics, robotics, and engineering.They provide a systematic way to break down and analyze problems involving directions, magnitudes, and projections.Understanding vectors helps you design simulations, optimize machine learning models, and solve physics problems.</p>
     </section>
-    <br />
-    <h1 class="font-semibold text-xl py-4">Why should I learn Vectors?</h1>
-    <p>Vectors are the backbone of many fields, including computer graphics, machine learning, physics, robotics, and engineering.They provide a systematic way to break down and analyze problems involving directions, magnitudes, and projections.Understanding vectors helps you design simulations, optimize machine learning models, and solve physics problems.</p>
   </article>
   `;
   // @ts-ignore
