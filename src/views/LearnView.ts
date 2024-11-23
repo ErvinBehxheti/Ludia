@@ -9,10 +9,16 @@ export default function LearnView() {
         <h1 class="text-xl font-bold mb-4">Physics</h1>
           <ul class="space-y-2">
             <li>
-              <a href="/learn/vectors" data-link class="sidebar-link section" data-section="vectors">Vectors</a>
+              <a href="/learn/math" data-link class="sidebar-link section" data-section="math">Basic Math</a>
             </li>
-            <li class="subsection dontShow" data-parent="vectors">
-              <a href="/learn/vectors/dot-product" data-link>Dot Product</a>
+            <li class="subsection dontShow" data-parent="math">
+              <a href="/learn/math/trigonometry" data-link>Trigonometry</a>
+            </li>
+            <li class="subsection dontShow" data-parent="math">
+              <a href="/learn/math/vectors" data-link>Vectors</a>
+            </li>
+            <li class="subsection dontShow" data-parent="math">
+              <a href="/learn/math/vectors/dot-product" data-link>Dot Product</a>
             </li>
             <li>
               <a href="/learn" data-link class="sidebar-link section" data-section="motion">Motion</a>

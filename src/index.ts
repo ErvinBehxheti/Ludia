@@ -1,17 +1,41 @@
 import router from "./router";
-import HomeView from "./views/HomeView";
 import "./styles/main.css";
 import LearnView from "./views/LearnView";
-import VectorsView from "./views/Vectors/VectorsView";
-import DotVector from "./views/Vectors/DotVector";
 
-// Global scope declaration for math stuff;
 declare const MathJax: any;
 
-router.addRoute("/", HomeView);
-router.addRoute("/learn", LearnView);
-router.addRoute("/learn/vectors", LearnView, VectorsView);
-router.addRoute("/learn/vectors/dot-product", LearnView, DotVector);
+router.addRoute("/", async () => {
+  const { default: HomeView } = await import("./views/HomeView");
+  HomeView();
+});
+
+router.addRoute("/learn", async () => {
+  LearnView();
+});
+
+router.addRoute("/learn/math", async () => {
+  LearnView();
+  const { default: MathView } = await import("./views/Math/MathView");
+  MathView();
+});
+
+router.addRoute("/learn/math/vectors", async () => {
+  LearnView();
+  const { default: VectorsView } = await import("./views/Vectors/VectorsView");
+  VectorsView();
+});
+
+router.addRoute("/learn/math/vectors/dot-product", async () => {
+  LearnView();
+  const { default: DotVector } = await import("./views/Vectors/DotVector");
+  DotVector();
+});
+
+router.addRoute("/learn/math/trigonometry", async () => {
+  LearnView();
+  const { default: TrigView } = await import("./views/Math/Trigonometry");
+  TrigView();
+});
 
 router.addRoute("/404", () => {
   const app = document.getElementById("app") as HTMLDivElement;

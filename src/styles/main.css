@@ -131,6 +131,7 @@ use[id*="electron-"] {
 
 .subsection {
   display: none;
+  color: #2bbc8a;
 }
 
 .subsection:not(.dontShow) {

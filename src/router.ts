@@ -9,12 +9,7 @@ class Router {
     this.routes[path] = views;
   }
 
-  navigate(path: string) {
-    history.pushState({}, "", path);
-    this.loadRoute();
-  }
-
-  loadRoute() {
+  async loadRoute() {
     const path = window.location.pathname;
     const route = this.routes[path];
     const app = document.getElementById("app");
@@ -23,11 +18,23 @@ class Router {
       app.innerHTML = "";
 
       if (route) {
-        route.forEach((view) => view());
+        for (const view of route) {
+          await view();
+        }
       } else {
-        this.routes["/404"]?.forEach((view) => view());
+        const notFoundRoute = this.routes["/404"];
+        if (notFoundRoute) {
+          for (const view of notFoundRoute) {
+            await view();
+          }
+        }
       }
     }
+  }
+
+  navigate(path: string) {
+    history.pushState({}, "", path);
+    this.loadRoute();
   }
 }
 

@@ -4,7 +4,7 @@ export default function VectorsView() {
   learningView.innerHTML = `
   <article class="text-white text-lg">
         <section id="vector-introduction">
-        <h2 class="text-2xl pb-4 font-semibold">What are Vectors?</h2>
+        <h2 class="text-3xl pb-4 font-semibold">What are Vectors?</h2>
         <p>
           A vector is an object that has both a magnitude and a direction.
           Geometrically, we can picture a vector as a directed line segment,
