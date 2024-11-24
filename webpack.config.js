@@ -22,6 +22,10 @@ module.exports = (env, argv) => {
           test: /\.css$/i,
           use: ["style-loader", "css-loader", "postcss-loader"], // CSS loader added
         },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
+        },
       ],
     },
     devServer: {

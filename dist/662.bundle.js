@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkphysics_simulation=self.webpackChunkphysics_simulation||[]).push([[662],{662:(e,t,i)=>{function n(){document.getElementById("learning-view").innerHTML='\n    <article class="text-white text-lg">\n        Learn Basic math before diving into physics\n    </article>\n    ',MathJax.typeset()}i.r(t),i.d(t,{default:()=>n})}}]);

@@ -4,7 +4,7 @@ export default function VectorsView() {
   learningView.innerHTML = `
   <article class="text-white text-lg">
         <section id="vector-introduction" class="space-y-4">
-        <h2 class="text-3xl font-semibold">What are Vectors?</h2>
+        <h1 class="text-3xl font-semibold">What are Vectors?</h1>
         <p>
           A vector is an object that has both a magnitude and a direction.
           Geometrically, we can picture a vector as a directed line segment,
@@ -41,7 +41,7 @@ export default function VectorsView() {
       </section>
 
     <section id="vector-addition" class="pt-14 space-y-4">
-      <h2 class="text-2xl font-semibold">Operations on Vectors</h2>
+      <h1 class="text-2xl font-semibold">Operations on Vectors</h1>
 
       <p>
         We can define a number of operations on vectors geometrically without
@@ -52,7 +52,7 @@ export default function VectorsView() {
         <u><a href="/learn/vectors/dot-product" data-link class="text-[#2bbc8a] font-semibold">the dot product</a></u>.
       </p>
 
-      <h2 class="text-2xl font-semibold pt-4">Addition of Vectors</h2>
+      <h1 class="text-2xl font-semibold pt-4">Addition of Vectors</h1>
       <p>
         Given two vectors \\(\\vec{a}\\) and \\(\\vec{b}\\) , we form their sum
         \\(\\vec{a}\\)+\\(\\vec{b}\\) , as follows. We translate the vector
@@ -116,7 +116,7 @@ export default function VectorsView() {
     </section>
 
     <section id="vector-subtraction" class="space-y-4">
-      <h2 class="text-2xl font-semibold">Subtracting Vectors</h2>
+      <h1 class="text-2xl font-semibold">Subtracting Vectors</h1>
       <p>
         Before we define subtraction, we define the vector -\\(\\vec{a}\\) ,
         which is the opposite of \\(\\vec{a}\\) . The vector −\\(\\vec{a}\\) is
@@ -152,7 +152,7 @@ export default function VectorsView() {
     </section>
 
     <section id="vector-multiplication" class="space-y-4">
-      <h2 class="text-2xl font-semibold">Scalar Multiplications</h2>
+      <h1 class="text-2xl font-semibold">Scalar Multiplications</h1>
       <p>
         Given a vector \\(\\vec{a}\\) and a real number (scalar) λ , we can form
         the vector λ\\(\\vec{a}\\) as follows. If λ is positive, then
@@ -218,7 +218,7 @@ export default function VectorsView() {
       </p>
     </section>
     <section id="article-vector-application" class="space-y-4 pt-4">
-      <h2 class="text-2xl font-semibold">Application of Vectors in Computer Science and Physics</h2>
+      <h1 class="text-2xl font-semibold">Application of Vectors in Computer Science and Physics</h1>
 
       <div class="space-y-4">
         <h1 class="font-semibold text-xl">Computer Science</h1>
