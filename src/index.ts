@@ -21,13 +21,13 @@ router.addRoute("/learn/math", async () => {
 
 router.addRoute("/learn/math/vectors", async () => {
   LearnView();
-  const { default: VectorsView } = await import("./views/Vectors/VectorsView");
+  const { default: VectorsView } = await import("./views/Math/VectorsView");
   VectorsView();
 });
 
 router.addRoute("/learn/math/vectors/dot-product", async () => {
   LearnView();
-  const { default: DotVector } = await import("./views/Vectors/DotVector");
+  const { default: DotVector } = await import("./views/Math/DotVector");
   DotVector();
 });
 
@@ -35,6 +35,12 @@ router.addRoute("/learn/math/trigonometry", async () => {
   LearnView();
   const { default: TrigView } = await import("./views/Math/Trigonometry");
   TrigView();
+});
+
+router.addRoute("/learn/math/calculus", async () => {
+  LearnView();
+  const { default: CalcView } = await import("./views/Math/CalculusView");
+  CalcView();
 });
 
 router.addRoute("/404", () => {

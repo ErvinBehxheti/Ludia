@@ -20,6 +20,9 @@ export default function LearnView() {
             <li class="subsection dontShow" data-parent="math">
               <a href="/learn/math/vectors/dot-product" data-link>Dot Product</a>
             </li>
+            <li class="subsection dontShow" data-parent="math">
+              <a href="/learn/math/calculus" data-link>Calculus</a>
+            </li>
             <li>
               <a href="/learn" data-link class="sidebar-link section" data-section="motion">Motion</a>
             </li>
