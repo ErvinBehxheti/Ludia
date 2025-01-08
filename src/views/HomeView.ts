@@ -163,19 +163,6 @@ export default function HomeView() {
       id="about"
       class="flex min-h-screen justify-center items-center w-full p-10"
     >
-      <div class="w-1/2">
-        <iframe
-          width="800"
-          height="500"
-          class="object-cover rounded-2xl border"
-          src="https://www.youtube.com/embed/ErMSHiQRnc8"
-          title="Animation vs. Physics"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
       <div class="text-center text-white w-1/2">
         <h2 class="text-3xl font-bold">About Formula Visualizer</h2>
         <p class="text-lg mt-4">

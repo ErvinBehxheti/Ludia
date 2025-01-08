@@ -1,51 +1,14 @@
 import router from "./router";
 import "./styles/main.css";
-import LearnView from "./views/LearnView";
+import HomeView from "./views/HomeView";
+import Layout from "./views/Layout/Layout";
 
-declare const MathJax: any;
-
-router.addRoute("/", async () => {
-  const { default: HomeView } = await import("./views/HomeView");
+router.addRoute("/", () => {
   HomeView();
 });
 
-router.addRoute("/learn", async () => {
-  LearnView();
-});
-
-router.addRoute("/learn/math", async () => {
-  LearnView();
-  const { default: MathView } = await import("./views/Math/MathView");
-  MathView();
-});
-
-router.addRoute("/learn/math/vectors", async () => {
-  LearnView();
-  const { default: VectorsView } = await import("./views/Math/VectorsView");
-  VectorsView();
-});
-
-router.addRoute("/learn/math/vectors/dot-product", async () => {
-  LearnView();
-  const { default: DotVector } = await import("./views/Math/DotVector");
-  DotVector();
-});
-
-router.addRoute("/learn/math/trigonometry", async () => {
-  LearnView();
-  const { default: TrigView } = await import("./views/Math/Trigonometry");
-  TrigView();
-});
-
-router.addRoute("/learn/math/calculus", async () => {
-  LearnView();
-  const { default: CalcView } = await import("./views/Math/CalculusView");
-  CalcView();
-});
-
-router.addRoute("/404", () => {
-  const app = document.getElementById("app") as HTMLDivElement;
-  app.innerHTML = "<h1>404 - Not Found</h1>";
+router.addRoute("/learn", () => {
+  Layout();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
