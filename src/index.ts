@@ -2,6 +2,7 @@ import router from "./router";
 import "./styles/main.css";
 import HomeView from "./views/HomeView";
 import Layout from "./views/Layout/Layout";
+import TodoList from "./views/TodoList/Todolist";
 
 router.addRoute("/", () => {
   HomeView();
@@ -9,6 +10,10 @@ router.addRoute("/", () => {
 
 router.addRoute("/learn", () => {
   Layout();
+});
+
+router.addRoute("/todo-list", async () => {
+  await TodoList();
 });
 
 document.addEventListener("DOMContentLoaded", () => {

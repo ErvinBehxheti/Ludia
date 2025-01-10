@@ -8,15 +8,11 @@ html {
 
 body {
   font-family: monospace;
-  background-color: #1d1f21;
+  background-color: #f5efef;
 }
 
 header {
   backdrop-filter: blur(10px);
-}
-
-#particles-js {
-  z-index: 0;
 }
 
 .glass-overlay {
@@ -57,90 +53,19 @@ html.lenis body {
   pointer-events: none;
 }
 
-.svg-container {
-  width: 100%;
-  max-width: 300px;
-  position: relative;
+/* DASHBOARD STYLES */
+
+.sidebar-item {
+  padding: 5px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-use[id*="orbit-"] {
-  stroke-width: 2;
-  opacity: 0.8;
-}
-
-use[id*="electron-"] {
-  stroke-width: 10;
-  stroke-linecap: round;
-  stroke-dasharray: 0.1 400;
-  animation: electron-orbit 6s linear infinite;
-}
-
-#electron-1 {
-  animation-delay: 0s;
-}
-#electron-2 {
-  animation-delay: 0.5s;
-}
-#electron-3 {
-  animation-delay: 1s;
-}
-
-@keyframes electron-orbit {
-  0% {
-    stroke-dashoffset: 400;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@layer utilities {
-  .c-space {
-    @apply sm:px-10 px-5;
-  }
-
-  .nav-ul {
-    @apply flex flex-col items-center gap-4 sm:flex-row md:gap-6 relative z-20;
-  }
-
-  .nav-li {
-    @apply text-softWhite hover:text-white max-sm:hover:bg-black-500 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5;
-  }
-
-  .nav-li_a {
-    @apply text-lg md:text-base text-softWhite hover:text-[#2bbc8a] transition-colors;
-  }
-
-  .nav-sidebar {
-    @apply absolute left-0 right-0 text-white text-xl transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block;
-  }
-
-  .animate-spin-slow {
-    animation: spin-slow 15s linear infinite;
-  }
-}
-
-.subsection {
-  display: none;
-  color: #2bbc8a;
-}
-
-.subsection:not(.dontShow) {
-  transform: translateY(0);
-  display: block;
-}
-
-strong,
-em,
-abbr {
-  color: #2bbc8a;
+.sidebar-item:hover {
+  background-color: #f5efef;
+  color: #000;
 }

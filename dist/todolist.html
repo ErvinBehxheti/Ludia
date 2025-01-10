@@ -1,0 +1,30 @@
+<section class="flex w-full justify-center items-center">
+  <form
+    id="todo-form"
+    class="grid bg-[#363636] w-96 h-auto p-4 rounded-lg mt-10"
+  >
+    <label for="todo-input" class="text-white text-lg font-bold"
+      >Todo List</label
+    >
+    <input
+      placeholder="Write a task you want to do!"
+      id="todo-input"
+      value=""
+      name="todo-input"
+      type="text"
+      class="w-full bg-transparent placeholder:text-slate-400 text-white text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+    />
+    <label>List</label>
+    <ul id="todo-list">
+      <li
+        class="text-white text-lg hover:bg-white-700 hover:text-black p-2 rounded-md transition-colors duration-300 ease flex justify-between items-center"
+      >
+        Todo 1
+        <div class="flex justify-center items-center gap-2">
+          <button class="p-2 bg-red-500 hover:cursor-pointer" type="button" id="edit-btn"></button>
+          <button class="p-2 bg-orange-400 hover:cursor-pointer" type="button" id="del-btn"></button>
+        </div>
+      </li>
+    </ul>
+  </form>
+</section>
