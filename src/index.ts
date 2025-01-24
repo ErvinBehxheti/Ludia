@@ -3,6 +3,7 @@ import "./styles/main.css";
 import HomeView from "./views/HomeView";
 import Layout from "./views/Layout/Layout";
 import GaussMethod from "./views/Gauss/GaussMethod";
+import Trigonometry from "./views/Trigonometry/trigonometry";
 
 router.addRoute("/", () => {
   HomeView();
@@ -14,6 +15,10 @@ router.addRoute("/learn", () => {
 
 router.addRoute("/gauss-method", async () => {
   await GaussMethod();
+});
+
+router.addRoute("/trigonometry", async () => {
+  await Trigonometry();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
