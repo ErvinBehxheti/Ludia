@@ -2,7 +2,7 @@ import router from "./router";
 import "./styles/main.css";
 import HomeView from "./views/HomeView";
 import Layout from "./views/Layout/Layout";
-import TodoList from "./views/TodoList/Todolist";
+import GaussMethod from "./views/Gauss/GaussMethod";
 
 router.addRoute("/", () => {
   HomeView();
@@ -12,8 +12,8 @@ router.addRoute("/learn", () => {
   Layout();
 });
 
-router.addRoute("/todo-list", async () => {
-  await TodoList();
+router.addRoute("/gauss-method", async () => {
+  await GaussMethod();
 });
 
 document.addEventListener("DOMContentLoaded", () => {

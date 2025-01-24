@@ -1,11 +1,11 @@
 import { fetchHTML } from "../../utils";
 import Layout from "../Layout/Layout";
 
-export default async function TodoList() {
+export default async function GaussMethod() {
   Layout();
   const layoutContent = document.getElementById("content") as HTMLDivElement;
 
-  const todolist = await fetchHTML("todolist");
+  const todolist = await fetchHTML("gaussmethod");
   layoutContent.innerHTML = todolist;
 
   const equationsInput = document.getElementById("equations");

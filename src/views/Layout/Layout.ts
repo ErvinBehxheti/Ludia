@@ -18,7 +18,7 @@ export default function Layout() {
       </div>
       <div class="flex flex-col justify-center h-full">
         <nav class="flex flex-col justify-center w-full">
-          <a class="sidebar-item" data-link href="/todo-list">To-Do List</a>
+          <a class="sidebar-item" data-link href="/todo-list">Gauss Method</a>
           <a class="sidebar-item">Calculator</a>
           <a class="sidebar-item">Weather Widget</a>
           <a class="sidebar-item">Digital Clock</a>
