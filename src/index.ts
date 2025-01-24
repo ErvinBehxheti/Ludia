@@ -4,6 +4,10 @@ import HomeView from "./views/HomeView";
 import Layout from "./views/Layout/Layout";
 import GaussMethod from "./views/Gauss/GaussMethod";
 import Trigonometry from "./views/Trigonometry/trigonometry";
+import BallGame from "./views/Ball/ballgame";
+import Emoji from "./views/Emoji/emoji";
+import Quote from "./views/Quote/quote";
+import ColorPicker from "./views/Color/ColorPicker";
 
 router.addRoute("/", () => {
   HomeView();
@@ -20,6 +24,25 @@ router.addRoute("/gauss-method", async () => {
 router.addRoute("/trigonometry", async () => {
   await Trigonometry();
 });
+
+router.addRoute("/ballgame", async () => {
+  await BallGame();
+});
+
+router.addRoute("/mood", async () => {
+  await Emoji();
+});
+
+router.addRoute("/quote", async () => {
+  await Quote();
+});
+
+router.addRoute("/color-picker", async () => {
+  await ColorPicker();
+});
+
+router.addRoute("/cat-facts", async () => {
+  await 
 
 document.addEventListener("DOMContentLoaded", () => {
   router.loadRoute();

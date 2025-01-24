@@ -20,10 +20,10 @@ export default function Layout() {
         <nav class="flex flex-col justify-center w-full">
           <a class="sidebar-item" data-link href="/gauss-method">Gauss Method</a>
           <a class="sidebar-item" data-link href="/trigonometry">Trigonometry</a>
-          <a class="sidebar-item">Weather Widget</a>
-          <a class="sidebar-item">Digital Clock</a>
-          <a class="sidebar-item">Unit Converter</a>
-          <a class="sidebar-item">Random Quote Generator</a>
+          <a class="sidebar-item" data-link href="/ballgame">Ball Game</a>
+          <a class="sidebar-item" data-link href="/mood">Mood</a>
+          <a class="sidebar-item" data-link href="/quote">Quote</a>
+          <a class="sidebar-item" data-link href="/color-picker">Color Picker</a>
           <a class="sidebar-item">Currency Converter</a>
           <a class="sidebar-item">Stopwatch</a>
           <a class="sidebar-item">Color Picker</a>
