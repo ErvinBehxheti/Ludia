@@ -36,21 +36,7 @@ export default function HomeView() {
       </div>
       <div class="w-1/2 flex justify-center items-center">
         <div class="svg-container">
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="50 50 300 300">
-            <defs>
-              <symbol id="e">
-                <ellipse cx="200" cy="200" rx="33" ry="88" fill="none" stroke="inherit"/>
-              </symbol>
-            </defs>
-            <circle id="atom" fill="#3B3B3B" cx="200" cy="200" r="139" />
-            <use id="orbit-1" xlink:href="#e" stroke="#CCCCCC" />
-            <use id="orbit-2" xlink:href="#e" stroke="#CCCCCC" transform="rotate(60 200 200)" />
-            <use id="orbit-3" xlink:href="#e" stroke="#CCCCCC" transform="rotate(120 200 200)" />
-            <use id="electron-1" xlink:href="#e" stroke="#2bbc8a" />
-            <use id="electron-2" xlink:href="#e" stroke="#2bbc8a" transform="rotate(60 200 200)" />
-            <use id="electron-3" xlink:href="#e" stroke="#2bbc8a" transform="rotate(120 200 200)" />
-            <circle id="nucleus" fill="#7D7D7D" cx="200" cy="200" r="16" />
-          </svg>
+          <img src="https://media.istockphoto.com/id/1312850689/vector/matrix-background-binary-code-texture-falling-green-numbers-data-visualization-concept.jpg?s=612x612&w=0&k=20&c=l1xAzPJUjbROnui5McM-_vbDswAg5OoSzwJuFpdj3WE=" alt="coding pic" />
         </div>
       </div>
     </section>
