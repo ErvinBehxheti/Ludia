@@ -14,7 +14,7 @@ export default function Layout() {
   >
     <div class="flex flex-col w-full h-full">
       <div class="flex pt-4 justify-center h-16">
-        <h1 class="text-2xl font-bold inline-block">Dashboard</h1>
+        <a data-link href="/" class="text-2xl font-bold inline-block">Ludia Home</a>
       </div>
       <div class="flex flex-col justify-center h-full">
         <nav class="flex flex-col justify-center w-full">
@@ -24,16 +24,19 @@ export default function Layout() {
           <a class="sidebar-item" data-link href="/mood">Mood</a>
           <a class="sidebar-item" data-link href="/quote">Quote</a>
           <a class="sidebar-item" data-link href="/color-picker">Color Picker</a>
-          <a class="sidebar-item">Currency Converter</a>
-          <a class="sidebar-item">Stopwatch</a>
-          <a class="sidebar-item">Color Picker</a>
-          <a class="sidebar-item">BMI Calculator</a>
+          <a class="sidebar-item" data-link href="/cat-facts">Cat Facts</a>
+          <a class="sidebar-item" data-link href="/clock">Stopwatch</a>
         </nav>
       </div>
     </div>
   </div>
 </div>
-<div id="content" class="w-full"></div>
+<div id="content" class="w-full">
+  <h1>About This Dashboard (Kinda)</h1>
+  <p>
+  This dashboard is made so you can check what is possible with vanilla javascript and this is just the tip of the iceberg while this website main purpose is to give an experience like its built with React it also shows some quirky things built with Javascript. While everything about this seems simple or not so advanced keep in mind all this reactivity and the experience of it almost being a mobile app is brought to you by only pure javascript skills.
+  </p>
+</div>
     </div>
   `;
 

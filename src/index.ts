@@ -8,12 +8,14 @@ import BallGame from "./views/Ball/ballgame";
 import Emoji from "./views/Emoji/emoji";
 import Quote from "./views/Quote/quote";
 import ColorPicker from "./views/Color/ColorPicker";
+import CatFacts from "./views/Cats/CatFacts";
+import Clock from "./views/Clock/clock";
 
 router.addRoute("/", () => {
   HomeView();
 });
 
-router.addRoute("/learn", () => {
+router.addRoute("/ludia", () => {
   Layout();
 });
 
@@ -42,7 +44,12 @@ router.addRoute("/color-picker", async () => {
 });
 
 router.addRoute("/cat-facts", async () => {
-  await 
+  await CatFacts();
+});
+
+router.addRoute("/clock", async () => {
+  await Clock();
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   router.loadRoute();
