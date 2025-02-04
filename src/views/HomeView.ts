@@ -184,7 +184,7 @@ export default async function HomeView() {
       </section>
   
       <footer 
-        class="bg-opacity-80 text-gray-300 py-6 text-center"
+        class="bg-opacity-80 text-gray-300 py-6 text-center z-10 relative"
       >
         <p class="">
           &copy; ${new Date().getFullYear()} APOD Explorer. Images courtesy of NASA's Astronomy Picture of the Day.

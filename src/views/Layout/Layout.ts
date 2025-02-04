@@ -8,7 +8,7 @@ export default function Layout() {
       <aside class="w-full md:w-64 bg-gray-800 shadow-lg md:h-auto md:min-h-screen p-4 md:p-6">
         <div class="flex justify-between items-center md:block">
           <a href="/" data-link class="text-2xl font-extrabold text-yellow-400 hover:text-white transition-colors">
-            Asteroid Explorer
+            APOD Explorer
           </a>
           <button id="toggle-sidebar" class="md:hidden text-yellow-400 focus:outline-none">
             ☰

@@ -14,7 +14,7 @@ renderer.setClearColor(0x000000, 0);
 galaxyBackground?.appendChild(renderer.domElement);
 
 const camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(
-  45,
+  100,
   window.innerWidth / window.innerHeight,
   0.1,
   1000
@@ -24,7 +24,7 @@ camera.lookAt(0, 0, 0);
 
 window.addEventListener("scroll", () => {
   const scroll = window.scrollY / 1000;
-  camera.position.y = scroll;
+  camera.position.x = scroll;
   camera.lookAt(0, 0, 0);
 });
 
