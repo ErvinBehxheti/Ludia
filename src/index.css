@@ -8,7 +8,6 @@ html {
 
 body {
   font-family: monospace;
-  background-color: #f5efef;
 }
 
 header {
@@ -53,7 +52,6 @@ html.lenis body {
   pointer-events: none;
 }
 
-/* DASHBOARD STYLES */
 
 .sidebar-item {
   padding: 5px 20px;

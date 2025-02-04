@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./dist/*.html', './src/**/*.{html,js,ts}'],
+export default {
+  content: ['index.html', './src/**/*.{html,js,ts}'],
   theme: {
     extend: {
       fontFamily: {
@@ -22,10 +22,9 @@ module.exports = {
           600: '#AFB0B6',
           500: '#62646C',
         },
-        softWhite: "#F3F4F6"
       },
-      backgroundColor: {
-        deepBlue: "#1E3A8A",
+      backgroundImage: {
+        terminal: "url('/assets/terminal.png')",
       },
       dropShadow: {
         glow: [
@@ -36,5 +35,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
-
+};

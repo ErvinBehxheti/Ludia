@@ -1,54 +1,60 @@
+import Lenis from "lenis";
+import "./index.css";
 import router from "./router";
-import "./styles/main.css";
+import ApodPage from "./views/Apod/apod";
 import HomeView from "./views/HomeView";
 import Layout from "./views/Layout/Layout";
-import GaussMethod from "./views/Gauss/GaussMethod";
-import Trigonometry from "./views/Trigonometry/trigonometry";
-import BallGame from "./views/Ball/ballgame";
-import Emoji from "./views/Emoji/emoji";
-import Quote from "./views/Quote/quote";
-import ColorPicker from "./views/Color/ColorPicker";
-import CatFacts from "./views/Cats/CatFacts";
-import Clock from "./views/Clock/clock";
+import "./galaxyBackground";
 
-router.addRoute("/", () => {
-  HomeView();
+new Lenis({
+  autoRaf: true,
 });
 
-router.addRoute("/ludia", () => {
+async function loadFeaturedApod() {
+  const API_KEY = "4C1ZxhuHzbD4ZHZYsbvy7TW8h6wmHx1cZHN2Sf62";
+  const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Failed to fetch featured APOD data");
+    }
+    const apodData = await response.json();
+    return `
+      <div class="p-6 bg-gray-700 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-yellow-400 mb-2">Today's Astronomy Picture</h2>
+        ${
+          apodData.media_type === "image"
+            ? `<img src="${apodData.url}" alt="${apodData.title}" class="w-full rounded-md mb-4" />`
+            : `<iframe class="w-full rounded-md mb-4" src="${apodData.url}" frameborder="0" allowfullscreen></iframe>`
+        }
+        <p class="text-lg">${apodData.explanation.substring(0, 200)}...</p>
+        <a href="/apod/${
+          apodData.date
+        }" data-link class="text-yellow-400 hover:underline mt-2 inline-block">Read more</a>
+      </div>
+    `;
+  } catch (error) {
+    console.error(error);
+    return `<p class="text-red-500">Unable to load featured image at this time.</p>`;
+  }
+}
+
+router.addRoute("/", async () => {
+  HomeView();
+  const featuredApodHTML = await loadFeaturedApod();
+  const featuredApod = document.getElementById(
+    "featured-apod"
+  ) as HTMLDivElement;
+  featuredApod.innerHTML = featuredApodHTML;
+});
+
+router.addRoute("/apods", () => {
   Layout();
 });
 
-router.addRoute("/gauss-method", async () => {
-  await GaussMethod();
-});
-
-router.addRoute("/trigonometry", async () => {
-  await Trigonometry();
-});
-
-router.addRoute("/ballgame", async () => {
-  await BallGame();
-});
-
-router.addRoute("/mood", async () => {
-  await Emoji();
-});
-
-router.addRoute("/quote", async () => {
-  await Quote();
-});
-
-router.addRoute("/color-picker", async () => {
-  await ColorPicker();
-});
-
-router.addRoute("/cat-facts", async () => {
-  await CatFacts();
-});
-
-router.addRoute("/clock", async () => {
-  await Clock();
+router.addRoute("/apod/:date", async (params: { date: string }) => {
+  Layout();
+  await ApodPage(params);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
