@@ -3,15 +3,18 @@ export default function Layout() {
   const currentRoute = window.location.pathname;
 
   const layoutHTML = `
-    <div class="relative z-10 flex min-h-screen bg-gray-900">
+    <div class="relative z-10 flex flex-col md:flex-row min-h-screen bg-gray-900">
       <!-- Sidebar -->
-      <aside class="w-64 bg-gray-800 shadow-lg">
-        <div class="p-6">
+      <aside class="w-full md:w-64 bg-gray-800 shadow-lg md:h-auto md:min-h-screen p-4 md:p-6">
+        <div class="flex justify-between items-center md:block">
           <a href="/" data-link class="text-2xl font-extrabold text-yellow-400 hover:text-white transition-colors">
             Asteroid Explorer
           </a>
+          <button id="toggle-sidebar" class="md:hidden text-yellow-400 focus:outline-none">
+            ☰
+          </button>
         </div>
-        <nav class="mt-8">
+        <nav class="mt-4 md:mt-8 hidden md:block" id="sidebar-nav">
           <ul>
             <li class="px-6 py-3 hover:bg-gray-700">
               <a data-link href="/apods" class="block text-gray-300 hover:text-yellow-400 transition-colors">
@@ -22,19 +25,19 @@ export default function Layout() {
         </nav>
       </aside>
 
-      <main id="content" class="flex-1 p-8 text-gray-100">
-        <h1 class="text-3xl font-bold mb-4">NASA APOD Archive</h1>
-        <p class="mb-6">
+      <main id="content" class="flex-1 p-4 md:p-8 text-gray-100">
+        <h1 class="text-2xl md:text-3xl font-bold mb-4">NASA APOD Archive</h1>
+        <p class="mb-6 text-sm md:text-base">
           Browse Astronomy Picture of the Day entries for a given date range. Click on a card to see detailed information.
         </p>
 
-        <div class="flex items-center space-x-4 mb-6 justify-center">
+        <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 mb-6 justify-center">
           <div>
             <label for="start-date" class="block text-sm font-medium mb-1">Start Date</label>
             <input 
               type="date" 
               id="start-date" 
-              class="text-gray-900 px-3 py-2 rounded focus:outline-none" 
+              class="text-gray-900 px-3 py-2 rounded focus:outline-none w-full md:w-auto" 
             />
           </div>
           <div>
@@ -42,12 +45,12 @@ export default function Layout() {
             <input 
               type="date" 
               id="end-date" 
-              class="text-gray-900 px-3 py-2 rounded focus:outline-none" 
+              class="text-gray-900 px-3 py-2 rounded focus:outline-none w-full md:w-auto" 
             />
           </div>
           <button 
             id="fetch-button" 
-            class="bg-yellow-500 text-gray-900 font-semibold px-4 py-2 rounded hover:bg-yellow-600 transition-colors"
+            class="bg-yellow-500 text-gray-900 font-semibold px-4 py-2 rounded hover:bg-yellow-600 transition-colors w-full md:w-auto"
           >
             Fetch APODs
           </button>
@@ -67,13 +70,15 @@ export default function Layout() {
 
   setupSidebar(currentRoute);
 
-  const startDateInput = document.getElementById(
-    "start-date"
-  ) as HTMLInputElement;
+  const startDateInput = document.getElementById("start-date") as HTMLInputElement;
   const endDateInput = document.getElementById("end-date") as HTMLInputElement;
-  const fetchButton = document.getElementById(
-    "fetch-button"
-  ) as HTMLButtonElement;
+  const fetchButton = document.getElementById("fetch-button") as HTMLButtonElement;
+  const sidebarNav = document.getElementById("sidebar-nav") as HTMLDivElement;
+  const toggleSidebarButton = document.getElementById("toggle-sidebar") as HTMLButtonElement;
+
+  toggleSidebarButton?.addEventListener("click", () => {
+    sidebarNav.classList.toggle("hidden");
+  });
 
   const today = new Date();
   const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
@@ -104,9 +109,7 @@ function setupSidebar(currentRoute: string) {
 }
 
 async function fetchAndRenderApods(startDate: string, endDate: string) {
-  const container = document.getElementById(
-    "apods-container"
-  ) as HTMLDivElement;
+  const container = document.getElementById("apods-container") as HTMLDivElement;
 
   container.innerHTML = `<p class="text-sm text-gray-400">Loading...</p>`;
 
@@ -139,7 +142,6 @@ function renderApods(apods: any[], container: HTMLDivElement) {
   for (const apod of apodArray) {
     html += `
       <div class="bg-gray-800 rounded-lg p-4 shadow hover:shadow-lg transition-shadow flex flex-col">
-        <!-- If it's an image, show thumbnail; if it's a video, show a placeholder or a small embed -->
         ${
           apod.media_type === "image"
             ? `<img src="${apod.url}" alt="${apod.title}" class="h-48 w-full object-cover mb-3 rounded" />`
@@ -149,7 +151,6 @@ function renderApods(apods: any[], container: HTMLDivElement) {
         }
         <h2 class="text-lg font-semibold mb-2">${apod.title}</h2>
         <p class="text-sm text-gray-400 mb-4">Date: ${apod.date}</p>
-        <!-- Link to the detail page for that date -->
         <a 
           href="/apod/${apod.date}" 
           data-link 
