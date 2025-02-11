@@ -52,6 +52,11 @@ router.addRoute("/apods", () => {
   Layout();
 });
 
+router.addRoute("/apod/:date", async (params: { date: string }) => {
+  Layout();
+  await ApodPage(params);
+});
+
 router.addRoute("/404", () => {
   const app = document.getElementById("app") as HTMLDivElement;
   const notFoundHTML = `
@@ -61,13 +66,8 @@ router.addRoute("/404", () => {
     <p class="text-xl text-white">Route not found</p>
     <a href="/" data-link class="text-white">Go Back</a>
     </div>
-  `
-  app.innerHTML = notFoundHTML
-});
-
-router.addRoute("/apod/:date", async (params: { date: string }) => {
-  Layout();
-  await ApodPage(params);
+  `;
+  app.innerHTML = notFoundHTML;
 });
 
 document.addEventListener("DOMContentLoaded", () => {
