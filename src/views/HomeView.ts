@@ -64,21 +64,20 @@ export default function HomeView() {
         const inputField = document.querySelector("#inputField");
 const form = document.querySelector("#myForm");
 const ul = document.querySelector("#myList");
-
 let inputValue;
-inputField.addEventListener("input", function(event) {
-    inputValue = event.target.value;
-})
+inputField.addEventListener("input", function (event) {
+  inputValue = event.target.value;
+});
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  console.log("Vlera e inputit: " + inputValue);
+  inputField.value = "";
+  const li = document.createElement("li");
+  li.setAttribute("class", "list-item");
+  li.textContent = inputValue;
+  ul.appendChild(li);
+});
 
-form.addEventListener("submit", function(event) {
-    event.preventDefault();
-    console.log("Vlera e inputit: " + inputValue)
-    inputField.value = ""
-    const li = document.createElement("li");
-    li.setAttribute("class", "list-item");
-    li.textContent = inputValue;
-    ul.appendChild(li);
-})
           </code>
           <h1>HTML</h1>
           <code>
