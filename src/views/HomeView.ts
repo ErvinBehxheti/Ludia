@@ -60,62 +60,6 @@ export default function HomeView() {
 
         <div class="bg-white">
         <h1>app.js</h1>  
-        <code>
-        const inputField = document.querySelector("#inputField");
-const form = document.querySelector("#myForm");
-const ul = document.querySelector("#myList");
-let inputValue;
-inputField.addEventListener("input", function (event) {
-  inputValue = event.target.value;
-});
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  console.log("Vlera e inputit: " + inputValue);
-  inputField.value = "";
-  const li = document.createElement("li");
-  li.setAttribute("class", "list-item");
-  li.textContent = inputValue;
-  ul.appendChild(li);
-});
-
-          </code>
-          <h1>HTML</h1>
-          <code>
-          #myForm {
-    display: flex;
-    justify-content: center;
-}
-
-#inputField {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid rgb(131, 100, 131);
-    border-radius: 4px;
-}
-#submitButton {
-    padding: 10px 20px;
-    margin-left: 10px;
-    background-color: purple;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#myList {
-    margin-top: 20px;
-    list-style-type: none;
-    padding: 0;
-}
-
-.list-item {
-    padding: 10px;
-    border: 1px solid rgb(131, 100, 131);
-    border-radius: 4px;
-    margin-bottom: 10px;
-    background-color: #f9f9f9;
-}
-          </code>
         </div>
   
         <div 
