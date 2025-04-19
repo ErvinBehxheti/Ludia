@@ -57,10 +57,6 @@ export default function HomeView() {
             </ul>
           </nav>
         </nav>
-
-        <div class="bg-white">
-        <h1>app.js</h1>  
-        </div>
   
         <div 
           id="sidebar" 
